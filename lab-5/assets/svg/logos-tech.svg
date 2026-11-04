@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="16" fill="#2c3a8c"/>
+  <g fill="none" stroke="#aeb8f2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="170,30 150,55 170,80"/>
+    <polyline points="200,30 220,55 200,80"/>
+    <line x1="192" y1="26" x2="178" y2="84"/>
+  </g>
+  <text x="24" y="120" fill="#ffffff" font-family="Georgia, serif" font-size="30" font-weight="700">LOGOS TECH</text>
+</svg>

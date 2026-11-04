@@ -1,0 +1,27 @@
+/* Третий способ подключить шрифт — @import. Правило должно стоять в самом начале файла.
+   JetBrains Mono — акцентный моноширинный шрифт: код и надзаголовки. */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
+
+code,
+pre,
+.surtitre {
+  font-family: "JetBrains Mono", Consolas, "Courier New", monospace;
+}
+
+pre {
+  margin: var(--e-4) 0;
+  padding: var(--e-4);
+  overflow-x: auto;
+  border-radius: 12px;
+  background-color: #1a1c22;
+  color: #f5f2ec;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  color: inherit;
+}

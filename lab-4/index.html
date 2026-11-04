@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eloah Elie Monga Wandala — Главная</title>
+  <meta name="description" content="Портфолио Eloah Elie Monga Wandala — программист, предприниматель и дизайнер из Киншасы: LOGOS ONE, LOGOS TECH, Revival Canal International">
+  <meta name="author" content="Eloah Elie Monga Wandala">
+  <meta name="keywords" content="портфолио, CV, резюме, Eloah Elie Monga Wandala, БГУИР, HTML5, LOGOS TECH, LOGOS ONE, Revival Canal International">
+  <meta name="copyright" content="Eloah Elie Monga Wandala, 2026">
+  <meta name="document-state" content="Static">
+  <meta name="reply-to" content="el.monga.elie1@gmail.com">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/typography.css">
+  <style>
+    /* Внутренний стиль (<style>): действует только на этой странице.
+       Он стоит ПОСЛЕ <link> на main.css, поэтому при равной специфичности побеждает он. */
+
+    /* .surtitre — специфичность (0,1,0), как и в main.css. Побеждает это правило: оно объявлено позже. */
+    .surtitre {
+      color: #2c3a8c;
+    }
+
+    /* #hero-label — специфичность (1,0,0), сильнее любого класса.
+       Но у элемента есть атрибут style — он сильнее id, поэтому цвет в итоге берётся из style. */
+    #hero-label {
+      color: #1a1c22;
+    }
+
+    /* Селектор потомка: тень у карточек только внутри блока проектов. */
+    .projets-grid .carte:hover {
+      box-shadow: 0 14px 32px rgb(26 28 34 / 0.12);
+    }
+  </style>
+  <script src="scripts/main.js" defer></script>
+  <script>
+    function copyEmail(link) {
+      var email = "el.monga.elie1@gmail.com";
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(email);
+        link.textContent = "Адрес скопирован";
+      } else {
+        window.prompt("Скопируйте адрес:", email);
+      }
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#contenu" title="Перейти к основному содержимому">К содержимому</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <a class="monogramme" href="index.html" title="Остаться на главной странице" target="_self" aria-current="page">EM</a>
+      <p class="brand-name">Eloah Elie Monga Wandala</p>
+    </div>
+    <nav class="main-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html" title="Остаться на главной странице" target="_self" aria-current="page"><i class="fa-solid fa-house" aria-hidden="true"></i> Главная</a></li>
+        <li><a href="pages/about.html" title="Открыть страницу «Обо мне»" target="_blank" rel="noopener"><i class="fa-solid fa-user" aria-hidden="true"></i> Обо мне</a></li>
+        <li><a href="./pages/contacts.html" title="Открыть страницу «Контакты»" target="_blank" rel="noopener"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Контакты</a></li>
+        <li><a href="pages/sitemap.html" title="Открыть карту сайта" target="_blank" rel="noopener"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Карта сайта</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu" class="page">
+    <section class="intro" id="accueil">
+      <div>
+        <p class="surtitre" id="hero-label" style="color: #5a3a0e;">Портфолио</p>
+        <h1>Eloah Elie Monga Wandala</h1>
+        <p class="lede" style="border-left: 3px solid #2c3a8c; padding-left: 12px;">Программист, предприниматель, дизайнер и служитель Бога. Мне интересны веб-разработка, создание чего-то своего и истории, в которых есть смысл. Учусь в БГУИР, группа 6042244, специальность «Веб-дизайн и компьютерная графика».</p>
+        <ul class="puces">
+          <li>LOGOS ONE</li>
+          <li>LOGOS TECH</li>
+          <li>Revival Canal International</li>
+        </ul>
+        <p class="actions">
+          <a class="btn" href="#accueil" title="Показать приветствие" onclick="return showGreeting();"><i class="fa-solid fa-hand" aria-hidden="true"></i> Приветствие</a>
+          <a href="pages/about.html#projets" title="Открыть раздел проектов на странице «Обо мне»" target="_self">К проектам</a>
+        </p>
+      </div>
+      <figure>
+        <img class="portrait" src="assets/images/photo.jpg" srcset="assets/images/photo-480.jpg 480w, assets/images/photo.jpg 968w" sizes="(max-width: 719px) 320px, 400px" width="968" height="1280" alt="Портрет Eloah Elie Monga Wandala: белая рубашка, тёмно-синий галстук, руки скрещены">
+        <figcaption>Портрет</figcaption>
+      </figure>
+    </section>
+
+    <section id="projets">
+      <p class="surtitre">Проекты</p>
+      <h2>Направления работы</h2>
+      <p>Проекты, которые я сейчас развиваю. Все они пока в работе. Подробнее — на странице <a href="pages/about.html#projets" title="Проекты на странице «Обо мне»" target="_blank" rel="noopener">«Обо мне»</a>.</p>
+      <div class="projets-grid">
+        <article class="carte">
+          <h3>LOGOS ONE</h3>
+          <p>Платформа для историй и цифровых проектов, в разработке.</p>
+        </article>
+        <article class="carte">
+          <h3>LOGOS TECH</h3>
+          <p>Проект аудиовизуального творчества вокруг технологий, я CEO, в разработке.</p>
+        </article>
+        <article class="carte">
+          <h3>Revival Canal International</h3>
+          <p>Платформа контента, я сооснователь.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="liens">
+      <p class="surtitre">Ссылки</p>
+      <h2>Ссылки и ресурсы</h2>
+
+      <div class="groupes">
+        <div class="groupe-liens">
+          <h3>На сайте</h3>
+          <ul class="link-list">
+            <li><a href="pages/about.html" title="Страница «Обо мне» в этом же окне" target="_self">Обо мне (в этом окне)</a></li>
+            <li><a href="./pages/contacts.html" title="Страница «Контакты» в новой вкладке" target="_blank" rel="noopener">Контакты (новая вкладка)</a></li>
+            <li><a href="pages/sitemap.html" title="Карта сайта в новой вкладке" target="_blank" rel="noopener">Карта сайта</a></li>
+          </ul>
+        </div>
+
+        <div class="groupe-liens">
+          <h3>В сети</h3>
+          <ul class="link-list">
+            <li><a href="https://www.bsuir.by/" title="Официальный сайт БГУИР" target="_blank" rel="noopener">Университет БГУИР</a></li>
+            <li><a href="https://html.spec.whatwg.org/" title="Спецификация HTML" target="_blank" rel="noopener">Спецификация HTML</a></li>
+            <li><a href="https://developer.mozilla.org/ru/" title="Документация MDN Web Docs" target="_blank" rel="noopener">MDN Web Docs</a></li>
+          </ul>
+        </div>
+
+        <div class="groupe-liens">
+          <h3>Окна AAA и BBB</h3>
+          <ul class="link-list">
+            <li><a href="https://www.bsuir.by/" title="Открыть БГУИР в окне AAA" target="AAA">БГУИР (окно AAA)</a></li>
+            <li><a href="pages/sitemap.html" title="Открыть карту сайта в окне AAA" target="AAA">Карта сайта (окно AAA)</a></li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/HTML" title="Открыть MDN HTML в окне BBB" target="BBB">MDN HTML (окно BBB)</a></li>
+            <li><a href="https://validator.w3.org/" title="Открыть валидатор W3C в окне BBB" target="BBB">Валидатор W3C (окно BBB)</a></li>
+          </ul>
+        </div>
+
+        <div class="groupe-liens">
+          <h3>Связь и соцсети</h3>
+          <ul class="link-list">
+            <li><a href="mailto:el.monga.elie1@gmail.com?subject=Portfolio" title="Написать письмо о портфолио"><i class="fa-solid fa-envelope" aria-hidden="true"></i> el.monga.elie1@gmail.com</a></li>
+            <li><a href="https://t.me/logos_elie" title="Открыть Telegram @logos_elie" target="_blank" rel="noopener"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram @logos_elie</a></li>
+            <li><a href="https://www.facebook.com/share/1Dhkuc824F/?mibextid=wwXIfr" title="Открыть Facebook Eloah Elie Monga Wandala" target="_blank" rel="noopener"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+            <li><a href="https://www.instagram.com/eloah_elie_monga_officiel" title="Открыть Instagram @eloah_elie_monga_officiel" target="_blank" rel="noopener"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram @eloah_elie_monga_officiel</a></li>
+            <li><a href="https://github.com/" title="Профиль на GitHub" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/" title="Профиль в LinkedIn" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+      <p class="surtitre">Медиа</p>
+      <h2>Видео и аудио</h2>
+      <div class="media-grid">
+        <figure>
+          <video controls width="640" height="360" preload="metadata" poster="assets/images/photo-480.jpg">
+            <source src="assets/video/presentation.mp4" type="video/mp4">
+            <p>Видео здесь не воспроизводится. <a href="assets/video/presentation.mp4" title="Скачать видео" target="_blank" rel="noopener">Скачать видео</a></p>
+          </video>
+          <figcaption>Видеопрезентация</figcaption>
+        </figure>
+        <figure>
+          <audio controls preload="metadata">
+            <source src="assets/audio/presentation.ogg" type="audio/ogg">
+            <p>Аудио здесь не воспроизводится. <a href="assets/audio/presentation.ogg" title="Скачать аудио" target="_blank" rel="noopener">Скачать аудио</a></p>
+          </audio>
+          <figcaption>Аудиопрезентация</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="document">
+      <p class="surtitre">Документ</p>
+      <h2>Текст задания</h2>
+      <object data="assets/files/document.pdf" type="application/pdf" width="640" height="480" title="Текст лабораторной работы №2">
+        <p>Документ в этом браузере не отображается. <a href="assets/files/document.pdf" title="Открыть текст лабораторной работы" target="_blank" rel="noopener">Открыть документ</a></p>
+      </object>
+    </section>
+
+    <section id="carte">
+      <p class="surtitre">Схема сайта</p>
+      <h2>Разделы</h2>
+      <p>Нажмите на зону схемы, чтобы открыть страницу.</p>
+      <img class="plan" src="assets/images/plan.png" width="600" height="200" loading="lazy" alt="Схема сайта из трёх зон: Обо мне, Контакты и Карта сайта" usemap="#plan-site">
+      <map name="plan-site">
+        <area shape="rect" coords="0,0,200,200" href="pages/about.html" alt="Открыть страницу «Обо мне»" title="Обо мне" target="_blank" rel="noopener">
+        <area shape="rect" coords="200,0,400,200" href="pages/contacts.html" alt="Открыть страницу «Контакты»" title="Контакты" target="_blank" rel="noopener">
+        <area shape="rect" coords="400,0,600,200" href="pages/sitemap.html" alt="Открыть карту сайта" title="Карта сайта" target="_blank" rel="noopener">
+      </map>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <p class="monogramme monogramme-footer">EM</p>
+        <p>Eloah Elie Monga Wandala</p>
+        <p>Группа 6042244</p>
+        <p>Веб-дизайн и компьютерная графика</p>
+      </div>
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <ul>
+          <li><a href="index.html" title="Вернуться на главную" target="_self" aria-current="page"><i class="fa-solid fa-house" aria-hidden="true"></i> Главная</a></li>
+          <li><a href="pages/about.html" title="Перейти на страницу «Обо мне»" target="_blank" rel="noopener"><i class="fa-solid fa-user" aria-hidden="true"></i> Обо мне</a></li>
+          <li><a href="pages/contacts.html" title="Перейти на страницу «Контакты»" target="_blank" rel="noopener"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Контакты</a></li>
+          <li><a href="pages/sitemap.html" title="Перейти к карте сайта" target="_blank" rel="noopener"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Карта сайта</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p><a href="mailto:el.monga.elie1@gmail.com?subject=Portfolio" title="Написать письмо о портфолио"><i class="fa-solid fa-envelope" aria-hidden="true"></i> el.monga.elie1@gmail.com</a></p>
+        <p><a href="#contenu" title="Скопировать адрес почты" onclick="return copyEmail(this);">Скопировать адрес</a></p>
+        <p><a href="#contenu" title="Вернуться к началу страницы"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Наверх</a></p>
+      </div>
+    </div>
+    <p class="footer-meta" style="color: #ffffff;">&copy; Eloah Elie Monga Wandala, 2026. Лабораторная работа №4</p>
+  </footer>
+
+  <dialog class="bienvenue" id="greeting-dialog" aria-labelledby="greeting-title">
+    <h2 id="greeting-title">Приветствие</h2>
+    <p id="greeting-phrase"></p>
+    <form method="dialog">
+      <button type="submit">Закрыть</button>
+    </form>
+  </dialog>
+</body>
+</html>

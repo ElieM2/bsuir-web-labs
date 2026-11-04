@@ -1,0 +1,1340 @@
+/* Палитра сайта:
+   #f5f2ec — фон «бумага»,   #ffffff — карточки,
+   #1a1c22 — основной текст, #585d68 — второстепенный текст,
+   #2c3a8c — синий акцент (ссылки, кнопки), #e2ddd3 — линии и рамки,
+   #f6e7cf / #5a3a0e — охра для заметок. */
+:root {
+  --papier: #f5f2ec;
+  --blanc: #ffffff;
+  --encre: #1a1c22;
+  --texte-2: #585d68;
+  --discret: #626774;
+  --bleu: #2c3a8c;
+  --bleu-survol: #232e70;
+  --trait: #e2ddd3;
+  --champ: #857f75;
+  --sur-encre: #f5f2ec;
+  --sur-encre-2: #a9adb8;
+  --bleu-clair: #aeb8f2;
+  --ocre-fond: #f6e7cf;
+  --ocre-texte: #5a3a0e;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+  --e-7: 48px;
+  --e-8: 64px;
+  --e-9: 96px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--papier);
+  color: var(--encre);
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+img,
+video,
+audio,
+object {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: var(--bleu);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: var(--e-4);
+  top: -4rem;
+  z-index: 60;
+  padding: var(--e-2) var(--e-3);
+  background: var(--blanc);
+  color: var(--encre);
+}
+
+.skip:focus {
+  top: var(--e-4);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-4);
+  min-height: 68px;
+  padding: var(--e-3) clamp(20px, 5vw, 40px);
+  background: rgb(245 242 236 / 0.92);
+  border-bottom: 1px solid var(--trait);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-width: 0;
+}
+
+.monogramme {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--encre);
+  color: var(--papier);
+  font-family: var(--serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.monogramme:hover {
+  color: var(--papier);
+  text-decoration: none;
+}
+
+.brand-name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.main-nav ul,
+.footer-nav ul,
+.toc ol,
+.link-list,
+.sitemap,
+.puces {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav ul,
+.footer-nav ul,
+.puces,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2) var(--e-4);
+}
+
+.main-nav a {
+  padding: var(--e-2) 10px;
+  color: var(--texte-2);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.footer-nav a:hover {
+  color: var(--encre);
+}
+
+.main-nav a[aria-current="page"],
+.footer-nav a[aria-current="page"],
+.sitemap a[aria-current="page"] {
+  color: var(--encre);
+  text-decoration: underline;
+  text-decoration-color: var(--bleu);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.page {
+  width: min(1120px, calc(100% - 2 * clamp(20px, 5vw, 40px)));
+  margin: 0 auto var(--e-9);
+}
+
+.intro {
+  display: grid;
+  gap: var(--e-6);
+  padding: var(--e-8) 0 var(--e-7);
+}
+
+.surtitre {
+  margin: 0 0 var(--e-3);
+  color: var(--bleu);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0 0 var(--e-4);
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+}
+
+h2 {
+  margin: 0 0 var(--e-4);
+  font-size: clamp(1.5rem, 1.3rem + 1.2vw, 2.1rem);
+}
+
+h3 {
+  margin: var(--e-5) 0 var(--e-3);
+  font-size: 1.15rem;
+}
+
+.lede,
+p {
+  max-width: 68ch;
+}
+
+.lede {
+  color: var(--texte-2);
+  font-size: 1.125rem;
+}
+
+.puces li {
+  padding: 6px 12px;
+  border: 1px solid var(--trait);
+  border-radius: 999px;
+  background: var(--blanc);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.actions {
+  margin-top: var(--e-5);
+  align-items: center;
+}
+
+.btn,
+button {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--bleu);
+  color: var(--blanc);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+button:hover {
+  background: var(--bleu-survol);
+  color: var(--blanc);
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+.portrait {
+  display: block;
+  width: min(100%, 320px);
+  border: 1px solid var(--trait);
+  border-radius: 20px;
+}
+
+.intro .portrait {
+  width: min(100%, 400px);
+}
+
+figcaption,
+.note,
+.footer-meta,
+.toc-title {
+  color: var(--discret);
+  font-size: 0.875rem;
+}
+
+figcaption {
+  margin-top: var(--e-2);
+  font-weight: 500;
+}
+
+section {
+  padding: var(--e-8) 0 0;
+}
+
+.projets-grid,
+.media-grid,
+.groupes,
+.footer-grid,
+.contacts-layout {
+  display: grid;
+  gap: var(--e-5);
+}
+
+.carte,
+.form-card,
+.tuile {
+  padding: var(--e-5);
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+}
+
+.carte h3 {
+  margin-top: 0;
+}
+
+.groupe-liens {
+  padding-top: var(--e-4);
+  border-top: 1px solid var(--trait);
+}
+
+.groupe-liens h3 {
+  margin-top: 0;
+}
+
+.groupe-liens p {
+  color: var(--discret);
+}
+
+.link-list li + li,
+.sitemap > li {
+  margin-top: var(--e-3);
+}
+
+table {
+  width: 100%;
+  max-width: 68ch;
+  border-collapse: collapse;
+  margin: var(--e-4) 0 var(--e-5);
+}
+
+caption {
+  caption-side: bottom;
+  padding-top: var(--e-2);
+  color: var(--discret);
+  text-align: left;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  border: 1px solid var(--trait);
+  text-align: left;
+}
+
+th {
+  background: #ece7de;
+}
+
+code {
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
+  background: #ece7de;
+  font-size: 0.9em;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+}
+
+video,
+object {
+  display: block;
+  width: 100%;
+  background: #ece7de;
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+}
+
+video {
+  height: auto;
+}
+
+object {
+  height: min(70vh, 480px);
+}
+
+audio {
+  display: block;
+  width: min(100%, 480px);
+}
+
+img.plan {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+}
+
+.toc {
+  margin: var(--e-6) 0;
+  padding: var(--e-4) 0 var(--e-4) var(--e-5);
+  border-left: 1px solid var(--trait);
+}
+
+.toc-title {
+  margin: 0 0 var(--e-3);
+  font-weight: 600;
+}
+
+.sitemap ul {
+  margin: var(--e-2) 0 0;
+  padding: var(--e-2) 0 var(--e-2) var(--e-5);
+  border-left: 1px solid var(--trait);
+}
+
+.email-affiche {
+  margin: 0 0 var(--e-4);
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 1rem + 1.4vw, 1.7rem);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.page-contacts,
+.page-article,
+.page-plan {
+  padding-top: var(--e-8);
+}
+
+.page-contacts section,
+.page-plan section {
+  padding-top: 0;
+}
+
+.page-contacts .carte,
+.page-contacts .form-card {
+  padding-top: var(--e-5);
+}
+
+.page-intro {
+  margin-bottom: var(--e-6);
+}
+
+.form-card {
+  margin-top: var(--e-5);
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  margin: 0 0 var(--e-4);
+  padding: 0;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--e-2);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.field {
+  margin: 0 0 var(--e-4);
+}
+
+.field-row {
+  display: grid;
+  gap: var(--e-4);
+}
+
+.field-row .field {
+  margin: 0;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--champ);
+  border-radius: 10px;
+  background: var(--blanc);
+  color: var(--encre);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--bleu);
+  outline: none;
+}
+
+textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.tuiles {
+  display: grid;
+  gap: var(--e-3);
+  margin: var(--e-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tuile {
+  display: block;
+  min-height: 64px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tuile:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.tuile-nom {
+  display: block;
+  font-weight: 600;
+}
+
+.tuile-id {
+  display: block;
+  margin-top: 4px;
+  color: var(--discret);
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+
+.site-footer {
+  padding: var(--e-7) clamp(20px, 5vw, 40px) var(--e-6);
+  background: var(--encre);
+  color: var(--sur-encre);
+}
+
+.site-footer a {
+  color: var(--bleu-clair);
+}
+
+.monogramme-footer {
+  margin: 0 0 var(--e-3);
+}
+
+.site-footer p {
+  margin: 0 0 var(--e-2);
+}
+
+.footer-nav a {
+  color: var(--sur-encre-2);
+  text-decoration: none;
+}
+
+.footer-nav a[aria-current="page"] {
+  color: var(--sur-encre);
+}
+
+.footer-meta {
+  margin: var(--e-6) 0 0;
+}
+
+dialog.bienvenue {
+  width: min(26rem, calc(100% - 40px));
+  padding: var(--e-5);
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+  background: var(--blanc);
+  color: var(--encre);
+}
+
+dialog.bienvenue::backdrop {
+  background: rgb(26 28 34 / 0.5);
+}
+
+[id] {
+  scroll-margin-top: 10rem;
+}
+
+@media screen and (min-width: 720px) {
+  .intro {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+
+  .media-grid,
+  .groupes,
+  .field-row,
+  .contacts-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .colonne-reseaux {
+    align-self: start;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .projets-grid,
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .page-article article {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 68ch);
+    column-gap: var(--e-8);
+  }
+
+  .page-article .surtitre,
+  .page-article h1,
+  .page-article .lede,
+  .page-article header,
+  .page-article section {
+    grid-column: 2;
+  }
+
+  .page-article .toc {
+    grid-column: 1;
+    grid-row: 4 / span 4;
+    position: sticky;
+    top: 6rem;
+    align-self: start;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .brand-name {
+    display: none;
+  }
+
+  section {
+    padding-top: var(--e-7);
+  }
+
+  .intro {
+    padding-top: var(--e-7);
+  }
+
+  .portrait,
+  .intro .portrait {
+    width: min(100%, 320px);
+  }
+
+  object {
+    height: 360px;
+  }
+
+  .page-contacts .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-contacts .actions .btn {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .page {
+    width: calc(100% - 40px);
+  }
+
+  .site-header,
+  .site-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  h1,
+  .email-affiche {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ==========================================================
+   Лабораторная работа №3: цвет, фон, отступы, границы, тени
+   ========================================================== */
+
+/* КАСКАД. Как браузер выбирает правило, если их несколько:
+   1. !important сильнее всего, даже атрибута style.
+   2. Атрибут style (inline) сильнее любого селектора.
+   3. Дальше считается специфичность: id (1,0,0) > класс, атрибут, псевдокласс (0,1,0) > тег (0,0,1).
+   4. При равной специфичности побеждает правило, объявленное позже.
+      Поэтому <style> в index.html, стоящий после <link>, перекрывает этот файл. */
+
+/* Селектор по тегу: заголовки второго уровня на всех страницах. */
+h2 {
+  color: var(--encre);
+  padding-bottom: var(--e-2);
+  border-bottom: 2px solid var(--trait);
+}
+
+/* Группировка и потомки: цвет текста внутри main. В подвале цвет не меняется — он наследуется от .site-footer. */
+main p,
+main li,
+main td {
+  color: var(--encre);
+}
+
+/* Селектор по классу: .lede (0,1,0) сильнее, чем main p (0,0,2), поэтому подзаголовок остаётся серым. */
+.lede {
+  color: var(--texte-2);
+}
+
+/* Селектор по id: первый экран с фоновой картинкой. */
+#accueil {
+  margin-top: var(--e-5);
+  padding-left: var(--e-5);
+  padding-right: var(--e-5);
+  background-color: var(--papier);
+  background-image: url("../assets/svg/banner.svg");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  border: 1px solid var(--trait);
+  border-radius: 24px;
+}
+
+/* Селектор по классу: карточки проектов. */
+.carte {
+  margin-top: var(--e-2);
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+  background-color: var(--blanc);
+  box-shadow: 0 8px 24px rgb(26 28 34 / 0.06);
+}
+
+/* Блок с фотографией: внутренние и внешние отступы, рамка и тень. */
+.intro figure {
+  justify-self: center;
+  margin: var(--e-4);
+  padding: var(--e-3);
+  background-color: var(--blanc);
+  border: 1px solid var(--trait);
+  border-radius: 24px;
+  box-shadow: 0 18px 40px rgb(26 28 34 / 0.14);
+}
+
+/* Размеры, object-fit, фильтр, прозрачность и плавный переход для портрета. */
+.portrait {
+  position: relative;
+  top: 0;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: saturate(0.92);
+  opacity: 0.97;
+  transition: filter 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+}
+
+.portrait:hover {
+  top: -4px;
+  filter: saturate(1.05);
+  opacity: 1;
+}
+
+/* Селектор потомка: на странице «Обо мне» портрет обрезан в круг через clip-path. */
+#haut .portrait {
+  width: 240px;
+  height: 240px;
+  clip-path: circle(50% at 50% 50%);
+  border: 0;
+}
+
+/* Пунктирная рамка у групп ссылок. */
+.groupe-liens {
+  padding: var(--e-4);
+  border: 1px dashed var(--champ);
+  border-radius: 12px;
+}
+
+/* Селектор по атрибуту: ссылки, открывающиеся в новой вкладке, подчёркнуты точками. */
+a[target="_blank"] {
+  text-decoration-style: dotted;
+}
+
+/* Селектор по атрибуту: текущая страница в меню выделена фоном. */
+.main-nav a[aria-current="page"] {
+  background-color: var(--blanc);
+  border-radius: 8px;
+}
+
+/* !important побеждает даже атрибут style="color: #ffffff" у подписи в подвале index.html. */
+.footer-meta {
+  color: var(--sur-encre-2) !important;
+}
+
+/* Таблица опыта: рамки и фон заголовков. */
+table {
+  border: 2px solid var(--trait);
+  background-color: var(--blanc);
+}
+
+th {
+  background-color: #ece7de;
+}
+
+/* ==========================================================
+   Лабораторная работа №4: текст, списки, таблицы, формы
+   ========================================================== */
+
+/* Шрифты подключены тремя способами:
+   1. <link> на Google Fonts в <head> — основной шрифт текста Source Sans 3;
+   2. @font-face ниже — локальный файл .woff2 из assets/fonts для заголовков;
+   3. @import в styles/typography.css — акцентный JetBrains Mono для кода. */
+@font-face {
+  font-family: "Source Serif Local";
+  src: url("../assets/fonts/source-serif-cyrillic.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+@font-face {
+  font-family: "Source Serif Local";
+  src: url("../assets/fonts/source-serif-latin.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+2000-206F;
+}
+
+body {
+  font-family: "Source Sans 3", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+legend,
+.monogramme {
+  font-family: "Source Serif Local", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+h1 {
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 0 rgb(255 255 255 / 0.8), 0 6px 18px rgb(44 58 140 / 0.12);
+}
+
+/* Декоративная черта после заголовков разделов (::after). */
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin-top: var(--e-2);
+  background-color: var(--bleu);
+}
+
+.surtitre {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lede {
+  font-style: italic;
+  text-align: left;
+}
+
+/* Первая строка подзаголовка статьи — полужирная (::first-line). */
+.page-article .lede::first-line {
+  font-weight: 600;
+}
+
+/* Буквица в первом абзаце раздела «Путь» (::first-letter). */
+#parcours p:first-of-type::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  color: var(--bleu);
+  font-family: "Source Serif Local", Georgia, serif;
+  font-size: 3.2em;
+  line-height: 0.85;
+}
+
+/* Свои маркеры списков через ::before. */
+.page-article ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.page-article ul li {
+  position: relative;
+  padding-left: 1.4em;
+}
+
+.page-article ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.2em;
+  top: 0.7em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background-color: var(--bleu);
+  transform: rotate(45deg);
+}
+
+dt {
+  font-weight: 600;
+}
+
+dd {
+  margin: 0 0 var(--e-2) var(--e-4);
+  color: var(--texte-2);
+}
+
+/* Длинные адреса не ломают вёрстку на узких экранах. */
+.email-affiche {
+  font-size: clamp(1.05rem, 0.95rem + 0.6vw, 1.35rem);
+  white-space: nowrap;
+}
+
+.tuile-id {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 480px) {
+  .email-affiche {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Иконка, вставленная через CSS (Font Awesome, символ конверта). */
+.email-affiche a::before {
+  content: "\f0e0";
+  margin-right: 0.4em;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+/* Ссылки: порядок LVHA — :link, :visited, :hover, :active. */
+a:link {
+  color: var(--bleu);
+}
+
+a:visited {
+  color: #4b3f8f;
+}
+
+a:hover {
+  color: var(--bleu-survol);
+  text-decoration-thickness: 2px;
+}
+
+a:active {
+  color: var(--encre);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+/* Меню: те же состояния, но без подчёркивания и с плавной сменой цвета. */
+.main-nav a:link,
+.main-nav a:visited {
+  color: var(--texte-2);
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--encre);
+  background-color: var(--blanc);
+  border-radius: 8px;
+}
+
+.main-nav a:active {
+  color: var(--bleu);
+}
+
+.main-nav a[aria-current="page"] {
+  color: var(--encre);
+  text-decoration: underline;
+  text-decoration-color: var(--bleu);
+}
+
+.site-footer a:link,
+.site-footer a:visited {
+  color: var(--bleu-clair);
+}
+
+.footer-nav a:link,
+.footer-nav a:visited {
+  color: var(--sur-encre-2);
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--sur-encre);
+}
+
+.footer-nav a[aria-current="page"] {
+  color: var(--sur-encre);
+}
+
+/* a:link (0,1,1) сильнее простого класса (0,1,0), поэтому кнопкам, монограмме и плиткам
+   цвет задаётся через класс + псевдокласс (0,2,0). */
+.btn:link,
+.btn:visited {
+  color: var(--blanc);
+  text-decoration: none;
+}
+
+.monogramme:link,
+.monogramme:visited {
+  color: var(--papier);
+  text-decoration: none;
+}
+
+.tuile:link,
+.tuile:visited {
+  color: var(--encre);
+  text-decoration: none;
+}
+
+/* Таблица: тонкие рамки, фон заголовков, «зебра», подсветка строки. */
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  border: 1px solid var(--trait);
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  color: var(--blanc);
+  background-color: var(--bleu);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+th.num,
+td.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f4ec;
+}
+
+tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+  background-color: #e8ebf7;
+}
+
+/* Форма: ширина, центрирование, фокус, плейсхолдер, кнопка. */
+.form-card form {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 10px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--bleu);
+  box-shadow: 0 0 0 3px rgb(44 58 140 / 0.18);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9a948a;
+  font-style: italic;
+}
+
+/* Подсказка о неверном адресе — только когда поле уже заполнено. */
+input[type="email"]:not(:placeholder-shown):invalid {
+  border-color: #b3261e;
+}
+
+input[type="email"]:not(:placeholder-shown):valid {
+  border-color: #2e7d32;
+}
+
+button,
+.btn {
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgb(44 58 140 / 0.25);
+}
+
+button:active,
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Свои радиокнопки и флажок: appearance: none + состояние :checked. */
+.choice {
+  margin: 0 0 var(--e-4);
+}
+
+.choice legend {
+  margin-bottom: var(--e-2);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.choice p {
+  margin: 0 0 var(--e-2);
+}
+
+.choice label {
+  display: inline;
+  margin: 0;
+  cursor: pointer;
+}
+
+.choice input[type="radio"],
+.choice input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin: 0 8px 0 0;
+  padding: 0;
+  border: 2px solid var(--champ);
+  background-color: var(--blanc);
+  vertical-align: -4px;
+  cursor: pointer;
+}
+
+.choice input[type="radio"] {
+  border-radius: 50%;
+}
+
+.choice input[type="checkbox"] {
+  border-radius: 6px;
+}
+
+.choice input[type="radio"]:checked,
+.choice input[type="checkbox"]:checked {
+  border-color: var(--bleu);
+  background-color: var(--bleu);
+  box-shadow: inset 0 0 0 4px var(--blanc);
+}
+
+.choice input[type="checkbox"]:checked {
+  box-shadow: inset 0 0 0 3px var(--blanc);
+}
+
+/* Иконки Font Awesome рядом с текстом. */
+.fa-solid,
+.fa-brands {
+  margin-right: 0.25em;
+}
+
+.tuile-nom .fa-brands,
+.tuile-nom .fa-solid {
+  width: 1.2em;
+  color: var(--bleu);
+}
+
+/* На узком экране таблица опыта должна помещаться без прокрутки. */
+@media screen and (max-width: 480px) {
+  th,
+  td {
+    padding: 8px;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Дополнительные поля формы: скрытое поле, только чтение, пароль, файл, кнопка «Очистить». */
+.extra {
+  margin: 0 0 var(--e-4);
+  padding: var(--e-4);
+  border: 1px dashed var(--trait);
+  border-radius: 12px;
+}
+
+.extra legend {
+  width: auto;
+  margin-bottom: var(--e-2);
+  padding: 0 var(--e-2);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+input[readonly] {
+  background-color: #efece6;
+  color: var(--texte-2);
+  cursor: default;
+}
+
+input[type="password"] {
+  letter-spacing: 0.08em;
+}
+
+input[type="file"] {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.form-actions {
+  margin: 0;
+}
+
+.form-actions button {
+  margin: 0 var(--e-2) var(--e-2) 0;
+}
+
+button[type="reset"] {
+  background-color: transparent;
+  color: var(--bleu);
+  box-shadow: inset 0 0 0 1px var(--bleu);
+}
+
+button[type="reset"]:hover {
+  background-color: var(--bleu);
+  color: var(--blanc);
+}
+
+/* Подзаголовки h4–h6 в разделе «Проекты» и выделения в тексте (strong, em, mark). */
+.page-article h4,
+.page-article h5,
+.page-article h6 {
+  font-family: "Source Serif Local", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.page-article h4 {
+  margin: var(--e-5) 0 var(--e-2);
+  color: var(--bleu);
+  font-size: 1.1rem;
+}
+
+.page-article h5 {
+  margin: var(--e-4) 0 var(--e-2);
+  font-size: 1rem;
+}
+
+.page-article h6 {
+  margin: var(--e-4) 0 var(--e-2);
+  color: var(--texte-2);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+strong {
+  color: var(--encre);
+  font-weight: 700;
+}
+
+em {
+  color: var(--bleu);
+}
+
+mark {
+  padding: 0 4px;
+  border-radius: 4px;
+  background-color: var(--ocre-fond);
+  color: var(--ocre-texte);
+}
+
+blockquote {
+  margin: 0 0 var(--e-4);
+  padding-left: var(--e-4);
+  border-left: 3px solid var(--bleu);
+}

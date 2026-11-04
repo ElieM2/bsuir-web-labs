@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eloah Elie Monga Wandala — Контакты</title>
+  <meta name="description" content="Портфолио Eloah Elie Monga Wandala — программист, предприниматель и дизайнер из Киншасы: LOGOS ONE, LOGOS TECH, Revival Canal International">
+  <meta name="author" content="Eloah Elie Monga Wandala">
+  <meta name="keywords" content="контакты, почта, Telegram, форма обратной связи, Eloah Elie Monga Wandala, БГУИР, LOGOS TECH, LOGOS ONE, Revival Canal International">
+  <meta name="copyright" content="Eloah Elie Monga Wandala, 2026">
+  <meta name="document-state" content="Static">
+  <meta name="reply-to" content="el.monga.elie1@gmail.com">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <style>
+    /* Внутренний стиль страницы контактов. Подключён после main.css. */
+
+    /* Селектор по классу: карточка формы получает тень и рамку только здесь. */
+    .form-card {
+      border: 2px solid #2c3a8c;
+      box-shadow: 0 12px 32px rgb(26 28 34 / 0.08);
+    }
+
+    /* Селектор по атрибуту: поле почты отличается пунктирной рамкой. */
+    input[type="email"] {
+      border-style: dashed;
+    }
+  </style>
+  <script src="../scripts/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu" title="Перейти к основному содержимому">К содержимому</a>
+
+  <header class="site-header">
+    <div class="brand">
+      <a class="monogramme" href="../index.html" title="Открыть главную" target="_blank" rel="noopener">EM</a>
+      <p class="brand-name">Eloah Elie Monga Wandala</p>
+    </div>
+    <nav class="main-nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="../index.html" title="Открыть главную" target="_blank" rel="noopener"><i class="fa-solid fa-house" aria-hidden="true"></i> Главная</a></li>
+        <li><a href="about.html" title="Открыть страницу «Обо мне»" target="_blank" rel="noopener"><i class="fa-solid fa-user" aria-hidden="true"></i> Обо мне</a></li>
+        <li><a href="contacts.html" title="Остаться на странице «Контакты»" target="_self" aria-current="page"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Контакты</a></li>
+        <li><a href="sitemap.html" title="Открыть карту сайта" target="_blank" rel="noopener"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Карта сайта</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu" class="page page-contacts">
+    <header class="page-intro">
+      <p class="surtitre">Контакты</p>
+      <h1>Написать</h1>
+      <p class="lede">Чтобы обсудить проект, идею или этот сайт, проще всего написать мне на почту. Форма ниже откроет письмо в вашей почтовой программе.</p>
+    </header>
+
+    <div class="contacts-layout">
+      <div>
+        <section id="email" class="carte">
+          <h2>Электронная почта</h2>
+          <p class="email-affiche">
+            <a href="mailto:el.monga.elie1@gmail.com" title="Отправить письмо">el.monga.elie1@gmail.com</a>
+          </p>
+          <p>Группа 6042244. Специальность «Веб-дизайн и компьютерная графика». БГУИР, ул. П. Бровки, 6.</p>
+          <p class="actions">
+            <a class="btn" href="mailto:el.monga.elie1@gmail.com" title="Открыть почтовую программу"><i class="fa-solid fa-pen" aria-hidden="true"></i> Написать письмо</a>
+          </p>
+        </section>
+
+        <section id="formulaire" class="form-card">
+          <h2>Форма</h2>
+          <form action="mailto:el.monga.elie1@gmail.com" method="post" enctype="text/plain">
+            <fieldset>
+              <legend>Сообщение</legend>
+              <div class="field-row">
+                <p class="field">
+                  <label for="name">Имя</label>
+                  <input id="name" name="name" type="text" accesskey="n" autocomplete="name" placeholder="Как к вам обращаться" required>
+                </p>
+                <p class="field">
+                  <label for="visitor-email">Электронная почта</label>
+                  <input id="visitor-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+                </p>
+              </div>
+              <p class="field">
+                <label for="topic">Тема</label>
+                <select id="topic" name="topic">
+                  <option>Вопрос о портфолио</option>
+                  <option>Проект</option>
+                  <option>Лабораторная работа</option>
+                </select>
+              </p>
+              <fieldset class="choice">
+                <legend>Как ответить</legend>
+                <p>
+                  <input id="reply-mail" type="radio" name="reply" value="mail" checked>
+                  <label for="reply-mail">По почте</label>
+                </p>
+                <p>
+                  <input id="reply-tg" type="radio" name="reply" value="telegram">
+                  <label for="reply-tg">В Telegram</label>
+                </p>
+              </fieldset>
+              <p class="field">
+                <label for="message">Текст</label>
+                <textarea id="message" name="message" rows="6" placeholder="Коротко опишите вопрос" required></textarea>
+              </p>
+              <fieldset class="extra field-wide">
+                <legend>Дополнительно</legend>
+                <input type="hidden" name="lab" value="lab4">
+                <p class="field">
+                  <label for="site">Сайт</label>
+                  <input id="site" name="site" type="text" value="Портфолио Eloah Elie Monga Wandala" readonly>
+                </p>
+                <p class="field">
+                  <label for="password">Пароль (необязательно)</label>
+                  <input id="password" name="password" type="password" size="20" maxlength="20" autocomplete="new-password" placeholder="До 20 символов">
+                </p>
+                <p class="field">
+                  <label for="attachment">Файл (необязательно)</label>
+                  <input id="attachment" name="attachment" type="file">
+                </p>
+              </fieldset>
+              <p class="field choice">
+                <input id="agree" name="agree" type="checkbox" value="yes" required>
+                <label for="agree">Согласен на обработку данных</label>
+              </p>
+              <p class="form-actions field-wide">
+                <button type="submit" accesskey="s"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Подготовить письмо</button>
+                <button type="reset"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Очистить</button>
+              </p>
+            </fieldset>
+          </form>
+          <p class="note">Форма ничего не отправляет сама: она только готовит черновик письма.</p>
+        </section>
+
+        <section id="map" class="carte">
+          <h2>Карта кампуса</h2>
+          <iframe title="Карта: БГУИР, Минск, улица П. Бровки, 6" src="https://maps.google.com/maps?q=%D0%91%D0%93%D0%A3%D0%98%D0%A0%2C%20%D1%83%D0%BB.%20%D0%9F.%20%D0%91%D1%80%D0%BE%D0%B2%D0%BA%D0%B8%206%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA&amp;hl=ru&amp;z=16&amp;output=embed" width="600" height="320" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=%D0%91%D0%93%D0%A3%D0%98%D0%A0%2C%20%D1%83%D0%BB.%20%D0%9F.%20%D0%91%D1%80%D0%BE%D0%B2%D0%BA%D0%B8%206%2C%20%D0%9C%D0%B8%D0%BD%D1%81%D0%BA" title="Открыть карту БГУИР в новой вкладке" target="_blank" rel="noopener">Открыть карту в новой вкладке</a></p>
+        </section>
+      </div>
+
+      <section id="reseaux" class="colonne-reseaux">
+        <h2>Другие каналы</h2>
+        <ul class="tuiles">
+          <li>
+            <a class="tuile" href="mailto:el.monga.elie1@gmail.com?subject=Contact%20portfolio" title="Написать по электронной почте" target="_self">
+              <span class="tuile-nom"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Почта</span>
+              <span class="tuile-id">el.monga.elie1@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a class="tuile" href="https://t.me/logos_elie" title="Открыть Telegram @logos_elie" target="_blank" rel="noopener">
+              <span class="tuile-nom"><i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram</span>
+              <span class="tuile-id">@logos_elie</span>
+            </a>
+          </li>
+          <li>
+            <a class="tuile" href="https://www.facebook.com/share/1Dhkuc824F/?mibextid=wwXIfr" title="Открыть Facebook Eloah Elie Monga Wandala" target="_blank" rel="noopener">
+              <span class="tuile-nom"><i class="fa-brands fa-facebook" aria-hidden="true"></i> Facebook</span>
+              <span class="tuile-id">Eloah Elie Monga Wandala</span>
+            </a>
+          </li>
+          <li>
+            <a class="tuile" href="https://www.instagram.com/eloah_elie_monga_officiel" title="Открыть Instagram @eloah_elie_monga_officiel" target="_blank" rel="noopener">
+              <span class="tuile-nom"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</span>
+              <span class="tuile-id">@eloah_elie_monga_officiel</span>
+            </a>
+          </li>
+          <li>
+            <a class="tuile" href="https://github.com/" title="Открыть GitHub" target="_blank" rel="noopener">
+              <span class="tuile-nom"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</span>
+              <span class="tuile-id">код и репозитории</span>
+            </a>
+          </li>
+          <li>
+            <a class="tuile" href="https://www.linkedin.com/" title="Открыть LinkedIn" target="_blank" rel="noopener">
+              <span class="tuile-nom"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</span>
+              <span class="tuile-id">профессиональный профиль</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <p class="monogramme monogramme-footer">EM</p>
+        <p>Eloah Elie Monga Wandala</p>
+        <p>Группа 6042244</p>
+        <p>Веб-дизайн и компьютерная графика</p>
+      </div>
+      <nav class="footer-nav" aria-label="Навигация в подвале">
+        <ul>
+          <li><a href="../index.html" title="Вернуться на главную" target="_blank" rel="noopener"><i class="fa-solid fa-house" aria-hidden="true"></i> Главная</a></li>
+          <li><a href="about.html" title="Перейти на страницу «Обо мне»" target="_blank" rel="noopener"><i class="fa-solid fa-user" aria-hidden="true"></i> Обо мне</a></li>
+          <li><a href="contacts.html" title="К началу страницы «Контакты»" target="_self" aria-current="page"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Контакты</a></li>
+          <li><a href="sitemap.html" title="Перейти к карте сайта" target="_blank" rel="noopener"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Карта сайта</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p><a href="mailto:el.monga.elie1@gmail.com?subject=Portfolio" title="Написать письмо о портфолио"><i class="fa-solid fa-envelope" aria-hidden="true"></i> el.monga.elie1@gmail.com</a></p>
+        <p><a href="#contenu" title="Вернуться к основному содержимому">Наверх</a></p>
+      </div>
+    </div>
+    <p class="footer-meta">&copy; Eloah Elie Monga Wandala, 2026. Лабораторная работа №4</p>
+  </footer>
+</body>
+</html>

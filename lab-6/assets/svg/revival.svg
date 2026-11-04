@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160" viewBox="0 0 240 160">
+  <rect width="240" height="160" rx="16" fill="#f6e7cf"/>
+  <circle cx="190" cy="45" r="28" fill="none" stroke="#5a3a0e" stroke-width="3"/>
+  <circle cx="190" cy="45" r="12" fill="#5a3a0e"/>
+  <text x="24" y="112" fill="#5a3a0e" font-family="Georgia, serif" font-size="26" font-weight="700">Revival Canal</text>
+  <text x="24" y="138" fill="#5a3a0e" font-family="Georgia, serif" font-size="18">International</text>
+</svg>
